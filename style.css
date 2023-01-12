@@ -1,0 +1,399 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+
+
+:root {
+  --red: #ffcaca;
+  --orange: #ffedc1;
+  --yellow: #feffb8;
+  --green: #c4ffcb;
+  --blue: #add8ff;
+  --purple: #ccafe9;
+  --pink: #EBADCB;
+  --lightblue: #d1e9ff;
+  --white: #ffffff;
+  --darkgray: #6D839C;
+  --black: #011627;
+  --lessblue: #add8ffaa;
+  --lesswhite: #ffffffdd;
+  --bluehint: #7d98b5;
+  --lesslightblue: #a5bcd4;
+
+  --default: url(images/cursor/default.png);
+  --pointer: url(images/cursor/pointer.png);
+}
+
+* {
+  font-family: 'Barlow', sans-serif;
+
+  /* font-family: 'Rubik', sans-serif; */
+}
+
+.notransition *, .notransition *::after, .notransition *::before{
+  -webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  -ms-transition: none !important;
+  transition: none !important;
+
+  -webkit-animation: none !important;
+  -moz-animation: none !important;
+  -o-animation: none !important;
+  -ms-animation: none !important;
+  animation: none !important;
+}
+
+.notransition .anims-on {
+  display: block;
+}
+
+.notransition .anims-off {
+  display: none;
+}
+
+
+body:not(.notransition) .anims-off {
+  display: block;
+}
+
+body:not(.notransition) .anims-on {
+  display: none;
+}
+
+
+body.english .tp {
+  display: none;
+}
+body.english .eng {
+  display: block;
+}
+body:not(.english) .tp {
+  display: block;
+}
+body:not(.english) .eng {
+  display: none;
+}
+
+
+html {
+  min-height: 100%;
+}
+
+
+body {
+  background-color: var(--darkgray);
+  margin: 0;
+  padding: 0;
+  color: var(--black);
+  display: flex;
+  justify-content: center;
+  /* height: 100%; */
+}
+
+p, ul, ol {
+  font-size: 1.5em;
+}
+
+a, li {
+  font-size: inherit;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+h1 {
+  font-size: 3em;
+  color: var(--lesslightblue);
+  margin: 10px 0;
+}
+
+h1 span {
+  display: inline-block;
+  transition: 0.2s transform ease;
+}
+
+body:not(.notransition) h1:hover span:nth-child(1){
+  transform: translate(5%, 8%) rotate(8deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(2){
+  transform: translate(-5%, 4%) rotate(2deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(3){
+  transform: translate(-5%, -4%) rotate(-6deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(4){
+  transform: translate(8%, 2%) rotate(4deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(5){
+  transform: translate(-4%, 7%) rotate(-3deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(6){
+  transform: translate(6%, -3%) rotate(8deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(7){
+  transform: translate(-10%, 2%) rotate(-3deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(8){
+  transform: translate(7%, -6%) rotate(4deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(9){
+  transform: translate(3%, 1%) rotate(-10deg);
+}
+
+body:not(.notransition) h1:hover span:nth-child(10){
+  transform: translate(8%, -2%) rotate(-3deg);
+}
+
+
+hr {
+  overflow: visible; /* For IE */
+  padding: 0;
+  border: none;
+  text-align: center;
+  background: url("icons/wave-hr.svg") repeat-x 0 0;
+  width: 80%;
+  height: 10px;
+  animation: wave-move 10s infinite forwards linear;
+  animation-play-state: paused;
+  margin-bottom: 15px;
+}
+
+hr::after {
+  content: "";
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  top: -12px;
+  background: url("icons/kala-hr.svg") no-repeat center;
+  width: 70px;
+  height: 35px;
+  animation: swim .7s infinite forwards linear;
+  animation-play-state: paused;
+}
+
+
+hr:hover {
+  animation-play-state: running;
+}
+hr:hover::after {
+  animation-play-state: running;
+}
+/*
+.notransition hr:hover:after {
+  animation: none;
+} */
+
+@keyframes swim {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+@keyframes wave-move {
+  100% {
+    background-position: 500px;
+  }
+}
+
+ul, ol {
+  list-style: none;
+}
+
+li {
+  clear: left;
+}
+
+li:before {
+  content:"";
+  height:1.5em;
+  width:1.5em;
+  display:block;
+  float:left;
+  margin-left:-1.5em;
+  background-position:center;
+  background-repeat:no-repeat;
+  background-size:80%;
+  margin-right: 2px;
+
+  background-image:url("icons/mute.svg");
+}
+
+li:nth-child(1):before {
+  background-image:url("icons/wan.svg");
+}
+
+li:nth-child(2):before {
+  background-image:url("icons/tu.svg");
+}
+/* ol > li:before{
+  content:counter(liNum);
+  text-align:center;
+} */
+
+
+
+
+.button {
+  cursor: pointer;
+}
+
+
+.button {
+  transition: 0.5s color ease;
+}
+
+
+
+aside {
+  width: 100px;
+  margin-right: 50px;
+}
+
+aside div {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  position: sticky;
+  top: 100px;
+  margin-top: 300px;
+  text-align: right;
+}
+
+.aside-pad {
+  margin-left: 50px;
+  width: 100px;
+
+}
+
+
+main {
+  max-width: 800px;
+  /* margin: 0 auto; */
+  padding-bottom: 100px;
+}
+
+
+
+section {
+  margin: 10px auto;
+  padding: 0 10px;
+}
+
+
+
+
+
+header {
+  text-align: center;
+  margin-top: 50px;
+  white-space: nowrap;
+}
+
+header svg {
+  display: inline-block;
+  transform: translate(0%, 0%);
+  transition: 0.5s transform ease;
+  stroke-dashoffset: -1500;
+
+  animation: stroke-animation 2.5s forwards 1 linear;
+
+}
+
+header path {
+  stroke: var(--lesslightblue);
+  stroke-dasharray: 1000 700;
+  stroke-width: 2;
+  animation: stroke-animation 2.5s forwards infinite linear;
+  animation-play-state: paused;
+}
+
+
+@keyframes stroke-animation {
+  100% {
+    stroke-dashoffset: 200;
+  }
+}
+
+
+.path-fill {
+  fill: var(--bluehint);
+}
+
+
+
+header:hover path {
+  stroke-dashoffset: -1500;
+  /* animation: stroke-animation 2.5s forwards infinite linear; */
+  animation-play-state: running;
+}
+
+body:not(.notransition) header:hover svg:nth-child(1) {
+  transform: translate(-2%, -10%) rotate(-8deg);
+}
+body:not(.notransition) header:hover svg:nth-child(2) {
+  transform: translate(0%, 10%) rotate(6deg);
+}
+
+
+nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+nav svg {
+  margin: 20px 0;
+  stroke: var(--bluehint);
+  stroke-dasharray: 700 500;
+  stroke-dashoffset: -1000;
+  stroke-width: 10;
+  width: 80px;
+}
+
+nav path {
+  transition: 0.5s stroke ease, 0s stroke-dashoffset ease;
+  /* transition: 0.5s ease; */
+  stroke-width: 15;
+}
+
+nav a:hover path {
+  stroke: var(--lightblue);
+  stroke-dashoffset: 200;
+  transition: 0.5s stroke ease, 0.5s fill ease, 1.5s stroke-dashoffset ease;
+}
+
+nav a.here svg {
+  stroke: var(--lightblue);
+
+}
+
+
+section a {
+  text-decoration: underline;
+}
+
+section p a, section li a, .button {
+  color: var(--lesslightblue);
+  transition: 0.5s color ease;
+}
+
+section p a:hover, section li a:hover, .button:hover {
+  color: var(--lightblue);
+}

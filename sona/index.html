@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>sona • kala pona</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <script type="text/javascript" src="../script.js"></script>
+
+    <link rel="icon" href="https://bucketfish.me/assets/icon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="sona pi kala pona" />
+    <meta property="og:description" content="musi ni li pona mute tawa kala pona!" />
+    <meta name="theme-color" content="#d1e9ff" />
+
+  </head>
+  <body>
+
+    <aside>
+      <div>
+        <p><a class="button" href="https://bucketfish.me"><span class="tp">&larr; lipu bucketfish</span><span class="eng">&larr; main bucketfish</span></a></p>
+        <p class="button tp" onclick="toggleeng()">use english</p>
+        <p class="button eng" onclick="toggleeng()">o toki pona</p>
+
+        <p class="button anims-off" onclick="toggleanims()"><span class="tp">sitelen o tawa ala</span><span class="eng">turn off animations</span></p>
+        <p class="button anims-on" onclick="toggleanims()"><span class="tp">sitelen o tawa</span><span class="eng">turn on animations</span></p>
+      </div>
+
+    </aside>
+
+    <main>
+      <header>
+        <a href="/">
+          <svg width="400" viewBox="0.00 0.00 230 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke-linecap="round" id="kala">
+            <path class="path path-fill" d="M44.91,74.40 C44.91,74.40 6.21,16.87 6.21,16.87 C6.21,16.87 3.37,9.72 8.65,5.60 C13.95,1.47 20.05,6.56 20.05,6.56 C20.05,6.56 57.98,59.91 57.98,59.91 C57.98,59.91 97.84,2.31 143.67,3.06 C189.51,3.81 224.79,29.69 224.56,75.14 C224.34,119.18 189.59,146.15 143.84,146.66 C98.08,147.17 57.12,88.43 57.12,88.43 C57.12,88.43 21.55,141.34 21.55,141.34 C21.55,141.34 14.37,147.20 7.56,141.60 C1.09,136.28 7.50,127.70 7.50,127.70 C7.50,127.70 44.91,74.40 44.91,74.40 M69.86,74.64 C69.86,74.64 105.34,127.32 143.58,126.62 C181.82,125.92 205.57,107.18 205.11,76.02 C204.65,44.86 186.14,22.84 142.03,22.51 C97.91,22.17 69.86,74.64 69.86,74.64 Z" stroke-opacity="1.00" stroke-linejoin="round"/>
+
+            <!-- <path class="path path-empty" d="M69.86,74.64 C69.86,74.64 105.34,127.32 143.58,126.62 C181.82,125.92 205.57,107.18 205.11,76.02 C204.65,44.86 186.14,22.84 142.03,22.51 C97.91,22.17 69.86,74.64 69.86,74.64 Z" stroke-opacity="1.00" stroke-linejoin="round"/> -->
+          </g>
+          </svg>
+
+          <svg width="400" viewBox="0.00 0.00 230 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke-linecap="round" id="pona">
+          <path class="path path-fill" d="M211.35,42.67 C211.43,48.72 208.56,135.43 114.37,135.43 C20.17,135.43 16.75,45.16 16.92,40.48 C17.11,35.33 19.08,30.44 25.88,30.24 C32.65,30.04 34.97,38.85 35.13,42.94 C35.31,47.28 41.79,116.46 112.98,116.46 C184.17,116.46 190.93,55.62 193.21,43.04 C193.73,40.14 195.01,31.94 201.75,32.02 C207.52,32.09 211.26,36.61 211.35,42.67 Z" stroke-opacity="1.00" stroke-linejoin="round"/>
+          </g>
+          </svg>
+        </a>
+      </header>
+
+      <nav>
+        <a href="../">
+          <svg viewBox="0.00 0.00 150 165" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke-linecap="round" id="tomo">
+          <path d="M134.81,75.56 C134.81,75.56 75.13,11.35 75.13,11.35 C75.13,11.35 14.96,75.25 14.96,75.25 C14.96,75.25 14.72,149.76 14.72,149.76 C14.72,149.76 135.14,150.36 135.14,150.36 C135.14,150.36 134.81,75.56 134.81,75.56 Z" fill="none" stroke-width="15.00" stroke-opacity="1.00" stroke-linejoin="round"/>
+          </g>
+          </svg>
+        </a>
+
+        <a href="../pali">
+          <svg viewBox="0.00 0.00 150 165" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke-linecap="round" id="pali">
+          <path d="M13.90,111.21 C13.90,111.21 25.27,150.40 25.27,150.40 C25.27,150.40 31.47,74.85 74.97,74.85 C117.97,74.85 117.07,150.13 117.07,150.13 M75.45,14.39 C55.75,14.24 41.60,26.59 41.60,43.09 C41.60,58.97 55.01,69.60 75.60,69.60 C97.43,69.60 108.24,58.56 108.24,41.14 C108.24,26.55 96.14,14.55 75.45,14.39 Z" fill="none" stroke-opacity="1.00"  fill-rule="evenodd" stroke-linejoin="round"/>
+          </g>
+          </svg>
+        </a>
+
+        <a href="../musi/">
+          <svg viewBox="0.00 0.00 150 165" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke-linecap="round" id="musi">
+          <path d="M29.25,55.71 C39.49,55.71 48.87,50.35 48.87,37.02 C48.87,25.32 40.72,13.83 29.08,13.83 C17.74,13.83 10.95,25.23 10.95,37.64 C10.95,49.78 19.80,55.78 29.25,55.78 C29.25,112.62 35.98,150.67 75.10,150.67 C114.15,150.67 120.03,113.10 120.03,55.43 C129.52,55.43 138.86,49.63 138.86,37.11 C138.86,25.39 132.26,13.97 120.28,13.97 C108.09,13.97 101.92,25.20 101.92,37.59 C101.92,49.09 110.75,55.46 120.06,55.46" fill="none" stroke-opacity="1.00" stroke-linejoin="round"/>
+          </g>
+          </svg>
+        </a>
+
+        <a class="here" href="../sona/">
+          <svg viewBox="0.00 0.00 150 165" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <g stroke-linecap="round" id="sona">
+          <path d="M44.55,88.15 C44.55,88.15 44.57,150.13 44.57,150.13 C44.57,150.13 106.45,150.16 106.45,150.16 C106.45,150.16 106.50,88.28 106.50,88.28 C106.50,88.28 44.55,88.15 44.55,88.15 Z" fill="none" stroke-opacity="1.00" stroke-linejoin="round"/>
+          <path d="M19.79,33.14 C19.79,33.14 37.45,59.02 37.45,59.02" fill="none" stroke-opacity="1.00" stroke-linejoin="round"/>
+          <path d="M71.95,19.32 C71.95,19.32 76.76,49.99 76.76,49.99" fill="none" stroke-opacity="1.00" stroke-linejoin="round"/>
+          <path d="M130.39,32.93 C130.39,32.93 114.69,57.09 114.69,57.09" fill="none" stroke-opacity="1.00" stroke-linejoin="round"/>
+          </g>
+          </svg>
+
+        </a>
+      </nav>
+
+      <section class="tp">
+        <h1>pini ala</h1>
+        <p>lipu ni li pini ala. o lukin sin lon tenpo kama!</p>
+
+      </section>
+
+      <section class="eng">
+        <h1>under construction</h1>
+        <p>this page isn't done yet. check back soon!</p>
+
+
+
+      </section>
+
+    </main>
+
+    <div class="aside-pad">
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

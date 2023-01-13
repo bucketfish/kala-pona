@@ -113,45 +113,19 @@ h1 span {
   transition: 0.2s transform ease;
 }
 
-body:not(.notransition) h1:hover span:nth-child(1){
-  transform: translate(5%, 8%) rotate(8deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(2){
-  transform: translate(-5%, 4%) rotate(2deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(3){
-  transform: translate(-5%, -4%) rotate(-6deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(4){
-  transform: translate(8%, 2%) rotate(4deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(5){
-  transform: translate(-4%, 7%) rotate(-3deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(6){
-  transform: translate(6%, -3%) rotate(8deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(7){
-  transform: translate(-10%, 2%) rotate(-3deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(8){
-  transform: translate(7%, -6%) rotate(4deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(9){
-  transform: translate(3%, 1%) rotate(-10deg);
-}
-
-body:not(.notransition) h1:hover span:nth-child(10){
-  transform: translate(8%, -2%) rotate(-3deg);
-}
+body:not(.notransition) h1:hover span:nth-child(1){ transform: translate(5%, 8%) rotate(8deg);}
+body:not(.notransition) h1:hover span:nth-child(2){transform: translate(-5%, 4%) rotate(2deg);}
+body:not(.notransition) h1:hover span:nth-child(3){ transform: translate(-5%, -4%) rotate(-6deg);}
+body:not(.notransition) h1:hover span:nth-child(4){ transform: translate(8%, 2%) rotate(4deg);}
+body:not(.notransition) h1:hover span:nth-child(5){transform: translate(-4%, 7%) rotate(-3deg);}
+body:not(.notransition) h1:hover span:nth-child(6){transform: translate(6%, -3%) rotate(8deg);}
+body:not(.notransition) h1:hover span:nth-child(7){transform: translate(-10%, 2%) rotate(-3deg);}
+body:not(.notransition) h1:hover span:nth-child(8){transform: translate(7%, -6%) rotate(4deg);}
+body:not(.notransition) h1:hover span:nth-child(9){transform: translate(3%, 1%) rotate(-10deg);}
+body:not(.notransition) h1:hover span:nth-child(10){transform: translate(8%, -2%) rotate(-3deg);}
+body:not(.notransition) h1:hover span:nth-child(11){transform: translate(3%, -6%) rotate(-5deg);}
+body:not(.notransition) h1:hover span:nth-child(12){transform: translate(7%, -1%) rotate(6deg);}
+body:not(.notransition) h1:hover span:nth-child(13){transform: translate(-4%, 8%) rotate(3deg);}
 
 
 hr {
@@ -220,27 +194,40 @@ li {
   clear: left;
 }
 
+li:hover::before{
+  background-color: var(--lesslightblue);
+}
+
 li:before {
   content:"";
-  height:1.5em;
-  width:1.5em;
+  height:1em;
+  width:1em;
   display:block;
   float:left;
-  margin-left:-1.5em;
+  margin: .1em 0 .1em -1.5em;
   background-position:center;
   background-repeat:no-repeat;
-  background-size:80%;
+  background-size:60%;
   margin-right: 2px;
 
-  background-image:url("icons/mute.svg");
+  mask-repeat: no-repeat;
+
+  background-color: var(--bluehint);
+  -webkit-mask-image: url("icons/mute.svg");
+  mask-image: url("icons/mute.svg");
+
+
+  /* background-image:url("icons/mute.svg"); */
 }
 
 li:nth-child(1):before {
-  background-image:url("icons/wan.svg");
+  -webkit-mask-image: url("icons/wan.svg");
+  mask-image:url("icons/wan.svg");
 }
 
 li:nth-child(2):before {
-  background-image:url("icons/tu.svg");
+  -webkit-mask-image: url("icons/tu.svg");
+  mask-image:url("icons/tu.svg");
 }
 /* ol > li:before{
   content:counter(liNum);
@@ -262,8 +249,11 @@ li:nth-child(2):before {
 
 
 aside {
-  width: 100px;
-  margin-right: 50px;
+  width: 200px;
+  padding: 0 50px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+
 }
 
 aside div {
@@ -277,16 +267,21 @@ aside div {
 }
 
 .aside-pad {
-  margin-left: 50px;
-  width: 100px;
+  /* padding: 0 50px; */
+  width: 200px;
+  max-width: 200px;
+  min-width: 0;
+  box-sizing: border-box;
+  flex-grow: 1;
 
 }
 
 
 main {
-  max-width: 800px;
+  width: 800px;
   /* margin: 0 auto; */
   padding-bottom: 100px;
+  flex-shrink: 0;
 }
 
 
@@ -396,4 +391,46 @@ section p a, section li a, .button {
 
 section p a:hover, section li a:hover, .button:hover {
   color: var(--lightblue);
+}
+
+
+@media (max-width:1020px){
+
+  body{
+    flex-flow: column;
+    justify-content: flex-start;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  aside {
+    width: 100%;
+    padding: 0;
+  }
+
+  aside div {
+    flex-flow: row;
+    position: relative;
+    top: 0;
+    margin-top: 0;
+    justify-content: space-between;
+    text-align: center;
+  }
+
+  header svg {
+    width: 42vw;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  nav svg {
+    width: 15vw;
+  }
+
+  .aside-pad {
+    display: none;
+  }
+
 }
